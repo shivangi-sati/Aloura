@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";  // import Link
 
 const QuickLinks = () => {
   const links = [
@@ -19,16 +20,19 @@ const QuickLinks = () => {
       transition={{ staggerChildren: 0.2 }}
     >
       {links.map((link) => (
-        <motion.a
+        <motion.div
           key={link.name}
-          href={link.path}
-          className="bg-[#ebdaf0] text-dark p-6 rounded-2xl shadow-md hover:shadow-lg hover:bg-[#FFE6E0] transition"
           whileHover={{ scale: 1.08, rotate: -2 }}
           whileTap={{ scale: 0.95 }}
         >
-          <div className="text-2xl mb-2">{link.icon}</div>
-          <div className="font-semibold">{link.name}</div>
-        </motion.a>
+          <Link
+            to={link.path}
+            className="block bg-[#ebdaf0] text-dark p-6 rounded-2xl shadow-md hover:shadow-lg hover:bg-[#FFE6E0] transition"
+          >
+            <div className="text-2xl mb-2">{link.icon}</div>
+            <div className="font-semibold">{link.name}</div>
+          </Link>
+        </motion.div>
       ))}
     </motion.div>
   );
