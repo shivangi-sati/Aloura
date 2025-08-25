@@ -1,0 +1,13 @@
+@import "tailwindcss";
+*{
+    color: #494949;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+
+.period-day {
+  background: pink !important;
+  border-radius: 50%;
+  color: white !important;
+}
